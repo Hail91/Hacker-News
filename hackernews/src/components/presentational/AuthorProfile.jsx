@@ -1,6 +1,6 @@
 import React from "react";
 
-function authorProfile() {
+function AuthorProfile() {
   // This component will be strictly presentational, will recieve props from main.jsx
   // and render the UI for the author clicked on in the stories/storyCard components.
   return (
@@ -10,4 +10,4 @@ function authorProfile() {
   );
 }
 
-export default authorProfile;
+export default AuthorProfile;

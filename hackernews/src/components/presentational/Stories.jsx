@@ -1,6 +1,6 @@
 import React from "react";
 
-function stories() {
+function Stories() {
   // This component will be strictly presentational, will recieve props from main.jsx
   // and render the storycard component for a specific number of components.
 
@@ -12,4 +12,4 @@ function stories() {
   );
 }
 
-export default stories;
+export default Stories;
