@@ -1,6 +1,6 @@
 import React from "react";
 
-const navigation = () => {
+const Navigation = () => {
   // This component will be strictly presentational, used to to allow user to shift between different views/components
   return (
     <div>
@@ -9,4 +9,4 @@ const navigation = () => {
   );
 };
 
-export default navigation;
+export default Navigation;
