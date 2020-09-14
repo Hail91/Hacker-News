@@ -16,7 +16,6 @@ function Main() {
       });
   }, []);
 
-  console.log(stories);
   // This component will render out cards for news articles (props will have to be passed down into the cards)
   return (
     <div>
