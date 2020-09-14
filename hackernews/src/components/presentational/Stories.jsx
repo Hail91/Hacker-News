@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-function Stories() {
-  // This component will be strictly presentational, will recieve props from main.jsx
-  // and render the storycard component for a specific number of components.
+// Component imports
+import storyCard from "../presentational/StoryCard";
 
-  // a stretch goal here would be to autoload more stories on scroll/add ability to filter stories by date posted or recency.
+function Stories({ data }) {
   return (
     <div>
       <h1>Stories will live here</h1>
