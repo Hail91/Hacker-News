@@ -1,10 +1,6 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 
-// Component imports
-import storyCard from "../presentational/StoryCard";
-
-function Stories({ data }) {
+function Stories() {
   return (
     <div>
       <h1>Stories will live here</h1>
