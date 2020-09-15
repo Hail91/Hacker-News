@@ -16,11 +16,12 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+import { DialogTitle } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
-    border: "1px solid red",
+    border: "1px solid black",
     marginTop: "2rem",
     marginBottom: "4rem",
   },
@@ -41,9 +42,12 @@ const useStyles = makeStyles((theme) => ({
   avatar: {
     backgroundColor: red[500],
   },
+  header: {
+    height: "4rem",
+  },
 }));
 
-function StoryCard() {
+function StoryCard({ data }) {
   // a stretch goal here would be to autoload more stories on scroll/add ability to filter stories by date posted or recency.
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
@@ -55,6 +59,7 @@ function StoryCard() {
   return (
     <Card className={classes.root}>
       <CardHeader
+        className={classes.header}
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
             R
@@ -65,13 +70,13 @@ function StoryCard() {
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={data.title}
+        subheader={data.time}
       />
       <CardMedia
         className={classes.media}
-        image="/static/images/cards/paella.jpg"
-        title="Paella dish"
+        image={data.image}
+        title="top-story"
       />
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">

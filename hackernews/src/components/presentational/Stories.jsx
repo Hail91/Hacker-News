@@ -14,7 +14,7 @@ function Stories({ data }) {
   return (
     <div style={styles}>
       {data.map((story, id) => {
-        return <StoryCard key={id} />;
+        return <StoryCard data={story} key={id} />;
       })}
     </div>
   );

@@ -6,10 +6,32 @@ import Stories from "../presentational/Stories";
 function Main() {
   // Component state
   const [stories, setStories] = useState([]);
+
+  // Function to map over unix date and convert
+  function convertUnix(obj) {
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    const date = new Date(obj.time * 1000);
+    const convertedDate = `${
+      months[date.getMonth()]
+    } ${date.getDate()}, ${date.getFullYear()}`;
+    return convertedDate;
+  }
   // API call on mount
   useEffect(() => {
     async function getTopStories() {
-      const storyImage = "https://source.unsplash.com/featured/?hacker";
       const url = "https://hacker-news.firebaseio.com/v0/topstories.json";
       try {
         const response = await fetch(url);
@@ -26,9 +48,11 @@ function Main() {
           );
         const results = await Promise.all(topstories);
         results.forEach((story) => {
+          const cleanDate = convertUnix(story);
+          const storyImage = "https://source.unsplash.com/random/?computer";
           story["image"] = storyImage;
+          story["time"] = cleanDate;
         });
-        console.log(results);
         // Append random image to img property for each object
         setStories(results);
       } catch (err) {
