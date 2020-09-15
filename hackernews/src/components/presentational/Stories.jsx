@@ -1,13 +1,21 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-
+import React from "react";
 // Component imports
-import storyCard from "../presentational/StoryCard";
+import StoryCard from "./StoryCard";
+
+const styles = {
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "space-around",
+  margin: "0 auto",
+  width: "75%",
+};
 
 function Stories({ data }) {
   return (
-    <div>
-      <h1>Stories will live here</h1>
+    <div style={styles}>
+      {data.map((story, id) => {
+        return <StoryCard data={story} key={id} />;
+      })}
     </div>
   );
 }
